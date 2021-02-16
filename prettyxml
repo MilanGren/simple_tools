@@ -1,0 +1,15 @@
+
+if [ $# -eq 0 ]
+then
+	echo "No arguments supplied => exit"
+	exit
+fi
+
+xmllint $1 | XMLLINT_INDENT=$'\t' xmllint --format --encode utf-8 - > tmp.xml
+
+
+cp tmp.xml $1
+
+
+rm tmp.xml
+

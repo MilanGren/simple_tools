@@ -1,0 +1,4 @@
+#netstat -tlpen #| grep 8080
+
+
+sudo netstat -tulpn | grep LISTEN

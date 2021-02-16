@@ -1,0 +1,8 @@
+rm -r vlog
+
+valgrind --leak-check=full --log-file="vlog" \
+         --show-leak-kinds=all \
+         --track-origins=yes \
+         -v ./$1
+
+cat vlog
