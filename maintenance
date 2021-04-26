@@ -1,0 +1,10 @@
+
+
+# https://unix.stackexchange.com/a/107039 
+
+
+# nejdriv vyhodit 'not purged packages'
+dpkg --list |grep "^rc" | cut -d " " -f 3 | xargs sudo dpkg --purge
+
+# 
+dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
